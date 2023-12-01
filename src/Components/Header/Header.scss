@@ -1,0 +1,95 @@
+.app-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: #505050;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  .app-header-content {
+    width: 1200px;
+    padding: 20px 15px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    .app-header-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      cursor: pointer;
+      img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+      p {
+        font-size: 25px;
+        font-weight: 800;
+        color: black;
+      }
+    }
+    .app-header-buttons {
+      display: flex;
+      gap: 20px;
+      font-size: 20px;
+      align-items: center;
+      a {
+        cursor: pointer;
+        color: black;
+      }
+      .app-header-basket {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 5px;
+        cursor: pointer;
+        position: relative;
+
+        .cart-product-counter {
+          position: absolute;
+          top: -5px;
+          right: -2px;
+          border-radius: 50%;
+          width: 20px;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background-color: black;
+          font-size: 14px;
+          color: white;
+        }
+      }
+    }
+    .app-basket-content {
+      display: flex;
+      position: absolute;
+      width: 300px;
+      background-color: #505050;
+      right: 0;
+      top: 90px;
+      transform-origin: top;
+      transform: scaleY(0);
+      transition: 0.3s ease;
+      pointer-events: none;
+      padding: 50px 10px 30px 10px;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 22;
+      min-height: 300px;
+      max-height: 600px;
+      overflow-y: auto;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      &.app-basket-active {
+        transform: scaleY(1);
+        pointer-events: auto;
+      }
+    }
+  }
+}
